@@ -1,5 +1,4 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from django.shortcuts import redirect
 from django.http import HttpResponse
 from .models import Squirrel
@@ -57,9 +56,3 @@ def stats(request):
 
 
 # Create your views here.
-=======
-from django.http import HttpResponse
-from django.shortcuts import redirect
-
-
->>>>>>> b5cfe17028b1cc358e9120011c4d3a230c661751
