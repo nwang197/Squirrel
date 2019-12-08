@@ -6,5 +6,13 @@ class Command(BaseCommand):
     help = 'Export Squirrel Data as a CSV File'
 
     def handle(self, *args, **options):
-        with open 
+        csvpath = args[0]
+        csvfields = Squirrel._meta.fields
+        with open(csvpath, 'w') as exportfile:
+            export = csv.writer(exportfile)
+            for item in Squirrel.objects.all():
+                exportrow = [getattr(item, field.name) for field in csvfields]
+                export.writerow(exportrow)
+                exportfile.close()
+
 
