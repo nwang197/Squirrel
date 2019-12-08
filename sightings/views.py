@@ -9,7 +9,7 @@ def all_Ss(request):
     context = {
                 'Squirrelss': Squirrels,
             }
-    return render(request, '/sightings.html', context)
+    return render(request, '/sightings/all.html', context)
 
 def addsquirrel(request):
     if request.method == 'POST':
@@ -23,9 +23,9 @@ def addsquirrel(request):
             'form':form,
             }
     return render(request,'sightings/edit.html',context)
-#def squirrel_details(request, Unique_Squirrel_ID ):
-#        squirrel  = Squirrel.objects.get(id= Unique_Squirrel_ID)
-#       return HttpResponse(sq
+def squirrel_details(request, Unique_Squirrel_ID ):
+    squirrel  = Squirrel.objects.get(id= Unique_Squirrel_ID)
+    return HttpResponse(squirrel.Unique_Squirrel_ID)
 
 
 def edit_squirrel(request, Unique_Squirrel_ID):
@@ -36,7 +36,7 @@ def edit_squirrel(request, Unique_Squirrel_ID):
             form.save()
             return redirect(f'/sightings/{Unique_Squirrel_ID}')
     else:
-        form = SForm(instance = squirrel)
+        form = SForm(instance = squirel)
 
     context = {
             'form'：form,
@@ -55,4 +55,4 @@ def stats(request):
 
 
 
-# Create your viewshere.
+# Create your views here.
