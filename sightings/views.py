@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 from .models import Squirrel
 from .forms import SForm
+from django.db.models import Count
 
 def all_Ss(request):
     Squirrels = Squirrel.objects.all()
@@ -45,13 +46,20 @@ def edit_squirrel(request, Unique_Squirrel_ID):
     return render(request,'/sightings/edit.html',context)
 
 def stats(request):
-
-    squirrels = Squirrel.objects.all()
-    context = {
-            'squirrels':squirrels
+    agelist = Squirrel.objects.values('age').annotate(count=Count('age'))
+    colorlist = Squirrel.objects.values('color').annotate(count=Count('color'))
+    climbinglist = Squirrel.objects.values('climbing').annotate(count=Count('climbing'))
+    runninglist = Squirrel.objects.values('running').annotate(count=Count('running'))
+    chasinglist = Squirrel.objects.values('chasing').annotate(count=Count('chasing'))
+    context={
+                'agelist':agelist,
+                'furcolorlist':colorlist,
+                'climbinglist':climbinglist,
+                'runninglist':runninglist,
+                'chasinglist':chasinglist,
             }
+    return render(request, 'sightings/stats.html',context)
 
-    return render(request,'/sightings/stats.html',context)
 
 
 

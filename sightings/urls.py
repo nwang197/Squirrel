@@ -9,4 +9,4 @@ urlpatterns = [
     path('/sightings/<Unique_Squirrel_ID>', views.squirrel_details),
     path('/sightings/edit', views.edit_squirrel),
     path('/sightings/stats',views.stats),
-            ]
+]
