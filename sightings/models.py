@@ -2,7 +2,6 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 
-<<<<<<< HEAD
 class Squirrel(models.Model):
     X = models.FloatField(
             help_text=_('X'),
@@ -14,8 +13,10 @@ class Squirrel(models.Model):
             help_text=_('Unique Squirrel ID'),
             max_length=15,
             primary_key=True,)
+   
     def __str__(self):
           return self.Unique_Squirrel_ID
+
     Hectare = models.CharField(
             help_text=_('Hectare'),
             max_length = 4,
@@ -67,26 +68,29 @@ class Squirrel(models.Model):
             choices = (
                 (GRAY, 'Gray'),
                 (BLACK, 'Black'),
-                (CINNAMMON, 'Cinnammon'),                                                                                                                                           (BLANK, ''), ),
+                (CINNAMMON, 'Cinnammon'),
+                ),
             default = BLANK,
             max_length = 10,
             null=True,
-            blank=True,  )                                                                                                                                              AG = 'Above Ground'
-    GP = 'Ground Plane'
+            blank=True,  )                                                            
+    Above_Ground = 'Above Ground'
+    Ground_Plane = 'Ground Plane'
     BLANK = ''
-    Loc = models.CharField(
+    Location = models.CharField(
             help_text=_('Location'),
             choices = (
-                        (AG, 'Above Ground'),
-                        (GP, 'Ground Plane'),
-                        (BLANK, ''),),
+                        (Above_Ground, 'Above Ground'),
+                        (Ground_Plane, 'Ground Plane'),
+                        (BLANK, ''),
+                       ),
             default = BLANK,
             max_length = 20,
             null = True,
             blank = True,)
 
                                                                                                                     
-    Spe_Loc = models.CharField(
+    Specific_Location = models.CharField(
             help_text=_('Specific Location'),
             max_length = 100,
             null = True,
@@ -106,12 +110,11 @@ class Squirrel(models.Model):
     Kuks=models.BooleanField(null=True)
     Quaas=models.BooleanField(null=True)
     Moans=models.BooleanField(null=True)
-    Tail_flags=models.BooleanField(null=True)
-    Tail_twitches=models.BooleanField(null=True)
-    Approaches=models.BooleanField(null=True)                                                                                                                           Indifferent=models.BooleanField(null=True)                                                                                                                          Run_from=models.BooleanField(null=True)
+    Tail_Flags=models.BooleanField(null=True)
+    Tail_Twitches=models.BooleanField(null=True)
+    Approaches=models.BooleanField(null=True) 
+    Indifferent=models.BooleanField(null=True)  
+    Runs_From=models.BooleanField(null=True)
                                                                                                                                                                                     
                                                                                                                                                                                         
                                                                                                                                                                                             
-=======
->>>>>>> b5cfe17028b1cc358e9120011c4d3a230c661751
-# Create your models here.
