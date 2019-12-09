@@ -69,6 +69,7 @@ class Squirrel(models.Model):
                 (GRAY, 'Gray'),
                 (BLACK, 'Black'),
                 (CINNAMMON, 'Cinnammon'),
+                (BLANK, ''),
                 ),
             default = BLANK,
             max_length = 10,

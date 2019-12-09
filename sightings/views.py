@@ -8,7 +8,7 @@ from django.db.models import Count
 def all_Ss(request):
     Squirrels = Squirrel.objects.all()
     context = {
-                'Squirrelss': Squirrels,
+                'Squirrels': Squirrels,
             }
     return render(request, '/sightings/all.html', context)
 
