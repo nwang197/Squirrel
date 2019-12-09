@@ -18,7 +18,7 @@ def addsquirrel(request):
         form = SForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(f'/sightings/add')
+            return redirect('/sightings/')
     else:
         form = SForm
     context = {
@@ -30,21 +30,21 @@ def addsquirrel(request):
 #    return HttpResponse(squirrel.Unique_Squirrel_ID)
 
 
-def edit_squirrel(request, Unique_ID):
-    squirrel = Squirrel.objects.get(Unique_Squirrel_ID=Unique_ID)
+def edit_squirrel(request, Unique_Squirrel_ID):
+    squirrel = Squirrel.objects.get(Unique_Squirrel_ID=Unique_Squirrel_ID)
     if request.method == 'POST':
         form = SForm(request.POST, instance= squirrel)
         if form.is_valid():
             form.save()
-            return redirect(f'/sightings/')
+            return redirect('/sightings/')
     else:
-        form = SForm(instance = squirel)
+        form = SForm(instance = squirrel)
 
     context = {
             'form':form,
             }
 
-    return render(request,'/sightings/edit.html',context)
+    return render(request,'sightings/edit.html',context)
 
 def stats(request):
     agelist = Squirrel.objects.values('Age').annotate(count=Count('Age'))
@@ -62,6 +62,3 @@ def stats(request):
     return render(request, 'sightings/stats.html',context)
 
 
-
-
-# Create your views here.

@@ -3,11 +3,15 @@ from django.utils.translation import gettext as _
 
 
 class Squirrel(models.Model):
-    X = models.FloatField(
-            help_text=_('X'),
+    X = models.DecimalField(
+            max_digits=50,
+            decimal_places=40,
+            help_text=_('Longitude'),
             null = True,)
-    Y = models.FloatField(
-            help_text=_('Y'),
+    Y = models.DecimalField(
+            max_digits=50,
+            decimal_places=40,
+            help_text=_('latitude'),
             null=True,)
     Unique_Squirrel_ID = models.CharField(
             help_text=_('Unique Squirrel ID'),
@@ -15,10 +19,13 @@ class Squirrel(models.Model):
             primary_key=True,)
    
 
-    Hectare = models.CharField(
-            help_text=_('Hectare'),
-            max_length = 4,
-            null = True,)
+#    Hectare = models.CharField(
+#            help_text=_('Hectare'),
+#            max_length = 4,
+#            null = True,
+#            default = None,
+#            )
+
                                     
 
     AM = 'AM'
@@ -33,10 +40,10 @@ class Squirrel(models.Model):
     Date = models.DateField(
             help_text=_('Date'),
             null = True,)
-    S_number = models.CharField(
-            help_text = _('Hectare Squirrel Number'),
-            max_length = 10,
-            null =True,)
+#    S_number = models.CharField(
+#            help_text = _('Hectare Squirrel Number'),
+#            max_length = 10,
+#            null =True,)
     ADULT = 'Adult'
     JUVENILE = 'Juvenile'
     UNKNOWN = 'Unknown'
