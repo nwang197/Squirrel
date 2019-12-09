@@ -4,14 +4,14 @@ from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
     X = models.DecimalField(
-            max_digits=50,
-            decimal_places=40,
+            max_digits=20,
+            decimal_places=15,
             help_text=_('Longitude'),
             null = True,)
     Y = models.DecimalField(
-            max_digits=50,
-            decimal_places=40,
-            help_text=_('latitude'),
+            max_digits=20,
+            decimal_places=15,
+            help_text=_('Latitude'),
             null=True,)
     Unique_Squirrel_ID = models.CharField(
             help_text=_('Unique Squirrel ID'),
