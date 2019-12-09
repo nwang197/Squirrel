@@ -14,8 +14,6 @@ class Squirrel(models.Model):
             max_length=15,
             primary_key=True,)
    
-    def __str__(self):
-          return self.Unique_Squirrel_ID
 
     Hectare = models.CharField(
             help_text=_('Hectare'),
@@ -115,7 +113,7 @@ class Squirrel(models.Model):
     Tail_Twitches=models.BooleanField(null=True)
     Approaches=models.BooleanField(null=True) 
     Indifferent=models.BooleanField(null=True)  
-    Runs_From=models.BooleanField(null=True)
-                                                                                                                                                                                    
-                                                                                                                                                                                        
+    Runs_From=models.BooleanField(null=True)                                                                                                                                                            
+    def __str__(self):
+        return self.Unique_Squirrel_ID 
                                                                                                                                                                                             

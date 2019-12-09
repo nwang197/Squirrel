@@ -8,7 +8,8 @@
 		</form>
 		<ul>
 			{% for squirrel in Squirrels %}
-			<li><a href="/sightings/{{squirrel.Unique_Squirrel_ID}}">{{ squirrel.Unique_Squirrel_ID}}</a></li>
+			<li><a href="/sightings/{{squirrel.Unique_Squirrel_ID}}">{{ squirrel.Unique_Squirrel_ID }}</a></li>
+			{% endfor %}
 		</ul>
 	</body>
 </html>
