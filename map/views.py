@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Squirrel
 
 def plotmap(request):
-    pinpoints = Squirrel.objects.all()
+    pinpoints = Squirrel.objects.all().order_by('?')[:100]
     context = {
         'pinpoints': pinpoints
         }
