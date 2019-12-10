@@ -65,7 +65,7 @@ class Squirrel(models.Model):
                                                                                 
     GRAY = 'Gray'
     BLACK = 'Black'
-    CINNAMMON = 'Cinnammon'
+    CINNAMON = 'Cinnamon'
     BLANK = ''
 
     Primary_Fur_Color = models.CharField(
@@ -73,12 +73,11 @@ class Squirrel(models.Model):
             choices = (
                 (GRAY, 'Gray'),
                 (BLACK, 'Black'),
-                (CINNAMMON, 'Cinnammon'),
+                (CINNAMON, 'Cinnamon'),
                 (BLANK, ''),
                 ),
             default = BLANK,
             max_length = 10,
-            null=True,
             blank=True,  )                                                            
     Above_Ground = 'Above Ground'
     Ground_Plane = 'Ground Plane'
