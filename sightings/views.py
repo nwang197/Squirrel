@@ -48,13 +48,13 @@ def edit_squirrel(request, Unique_Squirrel_ID):
 
 def stats(request):
     agelist = Squirrel.objects.values('Age').annotate(count=Count('Age'))
-    moanlist = Squirrel.objects.values('Moans').annotate(count=Count('Moans'))
+    colorlist = Squirrel.objects.values('Primary_Fur_Color').annotate(count=Count('Primary_Fur_Color'))
     climbinglist = Squirrel.objects.values('Climbing').annotate(count=Count('Climbing'))
     runninglist = Squirrel.objects.values('Running').annotate(count=Count('Running'))
     chasinglist = Squirrel.objects.values('Chasing').annotate(count=Count('Chasing'))
     context={
                 'agelist':agelist,
-                'moanlist': moanlist,
+                'colorlist':colorlist,
                 'climbinglist':climbinglist,
                 'runninglist':runninglist,
                 'chasinglist':chasinglist,
